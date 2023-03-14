@@ -36,6 +36,11 @@ jobs:
           ref: ${{ inputs.TAG }}
           fetch-depth: 0
           path: "input"
+      
+      - name: Configure node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: create tag
         env:
@@ -47,9 +52,6 @@ jobs:
           git tag ${P} -m "${P}-node_modules.tar.xz"
 
       - name: Generate node_modules.tar.xz
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
         env:
           P: ${{ inputs.P }}
         run: |
