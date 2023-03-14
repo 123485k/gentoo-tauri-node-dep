@@ -57,7 +57,7 @@ jobs:
         run: |
           cd input
           npm install
-          tar --create --auto-compress --file ${P}-node_modules.tar.xz node_modules
+          tar --create --auto-compress --file /tmp/${P}-node_modules.tar.xz node_modules
           rm -rf node_modules
 
 
