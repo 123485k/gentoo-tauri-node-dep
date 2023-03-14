@@ -46,7 +46,7 @@ jobs:
           git tag --delete ${P} || echo yes
           git tag ${P} -m "${P}-node_modules.tar.xz"
 
-      - name: Generate deps.tar.xz
+      - name: Generate node_modules.tar.xz
         uses: actions/setup-node@v3
         with:
           node-version: 16
